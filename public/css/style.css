@@ -1,0 +1,443 @@
+/* NBA Player Picker — styles.css */
+/* Google Fonts: Bebas Neue (display) + Barlow (body) */
+
+:root {
+    --nba-orange: #F7A01B;
+    --nba-dark:   #1A1A2E;
+    --nba-mid:    #16213E;
+    --nba-panel:  #0F3460;
+    --nba-accent: #E94560;
+    --text-main:  #F0F0F0;
+    --text-muted: #A0A8C0;
+    --radius:     12px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--nba-dark);
+    color: var(--text-main);
+    font-family: 'Barlow', sans-serif;
+    font-size: 16px;
+    min-height: 100vh;
+}
+
+/* ── Navbar ── */
+.navbar {
+    background-color: var(--nba-mid);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    border-bottom: 3px solid var(--nba-orange);
+}
+
+.nav-logo {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.6rem;
+    color: var(--nba-orange);
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--nba-orange);
+}
+
+/* ── Hero ── */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 5rem 2rem 3rem;
+    position: relative;
+}
+
+.hero-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 5rem;
+    color: var(--nba-orange);
+    letter-spacing: 4px;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.hero-sub {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 480px;
+    margin-bottom: 2rem;
+}
+
+.hero-ball {
+    font-size: 8rem;
+    position: absolute;
+    top: 2rem;
+    right: 10%;
+    opacity: 0.08;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* ── Buttons ── */
+.btn-primary {
+    background-color: var(--nba-orange);
+    color: var(--nba-dark);
+    font-family: 'Barlow', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.2s, transform 0.1s;
+    margin-right: 0.75rem;
+}
+
+.btn-primary:hover {
+    background-color: #ffb83f;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-main);
+    font-family: 'Barlow', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border: 2px solid var(--text-muted);
+    border-radius: var(--radius);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.btn-secondary:hover {
+    border-color: var(--nba-orange);
+    color: var(--nba-orange);
+}
+
+.btn-danger {
+    background-color: var(--nba-accent);
+    color: #fff;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.5rem 1.25rem;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn-danger:hover { opacity: 0.85; }
+
+.btn-full { width: 100%; text-align: center; }
+
+/* ── Features ── */
+.features {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto 3rem;
+}
+
+.feature-card {
+    background-color: var(--nba-mid);
+    border: 1px solid var(--nba-panel);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    flex: 1;
+    min-width: 200px;
+    max-width: 260px;
+    text-align: center;
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.feature-card h3 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.3rem;
+    color: var(--nba-orange);
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* ── Search Form ── */
+.form-page {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 1.5rem;
+}
+
+.form-card {
+    background-color: var(--nba-mid);
+    border: 1px solid var(--nba-panel);
+    border-radius: var(--radius);
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 540px;
+}
+
+.form-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2.4rem;
+    color: var(--nba-orange);
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.form-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+    flex: 1;
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+}
+
+label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.4rem;
+}
+
+input[type="number"] {
+    background-color: var(--nba-dark);
+    border: 1px solid var(--nba-panel);
+    border-radius: 8px;
+    color: var(--text-main);
+    font-family: 'Barlow', sans-serif;
+    font-size: 1rem;
+    padding: 0.6rem 0.9rem;
+    width: 100%;
+    transition: border-color 0.2s;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: var(--nba-orange);
+}
+
+.hint {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.3rem;
+    display: block;
+}
+
+/* ── Result Page ── */
+.result-page {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+.result-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--nba-orange);
+    margin-bottom: 0.5rem;
+}
+
+.result-name {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 4rem;
+    color: var(--text-main);
+    letter-spacing: 3px;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.result-meta {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.result-pool {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background-color: var(--nba-mid);
+    border: 1px solid var(--nba-panel);
+    border-radius: var(--radius);
+    padding: 1.25rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.stat-card.highlight {
+    background-color: var(--nba-panel);
+    border-color: var(--nba-orange);
+}
+
+.stat-value {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2rem;
+    color: var(--nba-orange);
+    letter-spacing: 1px;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.filters-used {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    padding: 0.75rem 1rem;
+    background-color: var(--nba-mid);
+    border-radius: 8px;
+}
+
+.result-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ── Error card ── */
+.error-card {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.error-icon { font-size: 4rem; margin-bottom: 1rem; }
+.error-card h2 { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2rem; }
+
+/* ── History ── */
+.history-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+}
+
+.history-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.page-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2.5rem;
+    color: var(--nba-orange);
+    letter-spacing: 2px;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--text-muted);
+}
+
+.empty-icon { font-size: 4rem; margin-bottom: 1rem; }
+.empty-state a { color: var(--nba-orange); }
+
+.history-table-wrap {
+    overflow-x: auto;
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.history-table th {
+    background-color: var(--nba-panel);
+    color: var(--nba-orange);
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.history-table td {
+    background-color: var(--nba-mid);
+    border-bottom: 1px solid var(--nba-panel);
+    color: var(--text-main);
+    padding: 0.7rem 1rem;
+    white-space: nowrap;
+}
+
+.history-table tr:hover td {
+    background-color: var(--nba-panel);
+}
+
+.player-name-cell {
+    font-weight: 700;
+    color: var(--nba-orange) !important;
+}

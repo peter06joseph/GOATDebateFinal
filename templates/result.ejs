@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Player | NBA Player Picker</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <span class="nav-logo">🏀 NBA Player Picker</span>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/players">Search</a>
+            <a href="/history">History</a>
+        </div>
+    </nav>
+
+    <main class="result-page">
+
+        <% if (filters.playerChoice === "jordan") { %>
+
+            <div class="error-card">
+                <div class="error-icon">❌</div>
+                <h1 style="font-size:3rem; color:#E94560;">YOU'RE WRONG</h1>
+                <h2 style="font-size:2rem; color:#F7A01B;">IT'S LEBRON.</h2>
+
+                <div class="result-actions" style="margin-top:2rem;">
+                    <a href="/players" class="btn-primary">Try Again</a>
+                    <a href="/history" class="btn-secondary">View History</a>
+                </div>
+            </div>
+
+        <% } else if (message) { %>
+
+            <div class="error-card">
+                <div class="error-icon">😬</div>
+                <h2><%= message %></h2>
+                <a href="/players" class="btn-primary">Try Again</a>
+            </div>
+
+        <% } else { %>
+
+            <div class="result-header">
+                <p class="result-label">Your Player</p>
+                <h1 class="result-name"><%= player.name %></h1>
+                <p class="result-meta"><%= player.team %> &bull; <%= player.position %></p>
+            </div>
+
+            <div class="result-actions">
+                <a href="/players" class="btn-primary">🎲 Pick Again</a>
+                <a href="/history" class="btn-secondary">View History</a>
+            </div>
+
+        <% } %>
+
+    </main>
+</body>
+</html>

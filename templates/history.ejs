@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search History | NBA Player Picker</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <span class="nav-logo">🏀 NBA Player Picker</span>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/players">Search</a>
+            <a href="/history">History</a>
+        </div>
+    </nav>
+
+    <main class="history-page">
+        <div class="history-header">
+            <h2 class="page-title">GOAT Pick History</h2>
+
+            <% if (searches.length > 0) { %>
+                <form action="/history/clear" method="POST" onsubmit="return confirm('Clear all history?')">
+                    <button type="submit" class="btn-danger">🗑 Clear All</button>
+                </form>
+            <% } %>
+        </div>
+
+        <div class="history-summary">
+            <p>LeBron chosen: <strong><%= lebronCount %></strong></p>
+            <p>Jordan chosen: <strong><%= jordanCount %></strong></p>
+        </div>
+
+        <% if (searches.length === 0) { %>
+            <div class="empty-state">
+                <div class="empty-icon">📭</div>
+                <p>No GOAT picks yet. <a href="/players">Choose one!</a></p>
+            </div>
+        <% } else { %>
+            <div class="history-table-wrap">
+                <table class="history-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Chosen GOAT</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% searches.forEach(s => { %>
+                        <tr>
+                            <td><%= new Date(s.date).toLocaleString() %></td>
+                            <td><%= s.playerName %></td>
+                        </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        <% } %>
+    </main>
+</body>
+</html>

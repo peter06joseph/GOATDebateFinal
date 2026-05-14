@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Players | NBA Player Picker</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <span class="nav-logo">🏀 NBA Player Picker</span>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/players">Search</a>
+            <a href="/history">History</a>
+        </div>
+    </nav>
+
+    <main class="form-page">
+        <div class="form-card">
+            <h2 class="form-title">Who is the GOAT of the NBA?</h2>
+            <p class="form-desc">Choose your GOAT</p>
+
+            <form action="/players/search" method="POST">
+                <div class="form-group">
+                    <label>Player</label>
+
+                    <div style="margin-bottom: 0.75rem;">
+                        <label>
+                            <input type="radio" name="playerChoice" value="lebron" checked>
+                            LeBron James
+                        </label>
+                    </div>
+
+                    <div>
+                        <label>
+                            <input type="radio" name="playerChoice" value="jordan">
+                            Michael Jordan
+                        </label>
+                    </div>
+
+                    <span class="hint">Choose one of the two NBA legends.</span>
+                </div>
+
+                <button type="submit" class="btn-primary btn-full">🏀 Choose Player</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
